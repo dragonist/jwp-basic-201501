@@ -1,28 +1,20 @@
 package next.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import next.dao.QuestionDao;
-import next.model.Question;
+import next.dao.JdbcQuestionDao;
 import core.mvc.AbstractController;
 import core.mvc.ModelAndView;
 
 public class ApiListController extends AbstractController {
-	private QuestionDao questionDao = QuestionDao.getInstance();
+	private QuestionDao questionDao = JdbcQuestionDao.getInstance();
 
-	
 	@Override
-	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		List<Question> questions;
-
-		questions = questionDao.findAll();
-		
+	public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = jsonView();
-		mav.addObject("questions", questions);
+		mav.addObject("questions", questionDao.findAll());
 		return mav;
 	}
 }

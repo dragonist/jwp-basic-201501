@@ -57,17 +57,30 @@
 	    <h3>
 	        댓글 수 : ${question.countOfComment}
 	    </h3>
+<<<<<<< HEAD
 	    	<c:forEach var="result" items="${answers}" varStatus="status">
 	    		<div class="comment">
 	            <div class="comment-metadata">
 	                <span class="comment-author">${result.writer}</span>
 	                <span class="comment-date">
 	                    ${result.createdDate}
+=======
+	    	<c:forEach items="${answers}" var="each">
+	        <div class="comment">
+	            <div class="comment-metadata">
+	                <span class="comment-author">by ${each.writer},</span>
+	                <span class="comment-date">
+	                   	<fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss" value="${each.createdDate}" />
+>>>>>>> 33dbb4991e322e4d0b7c2abf5165689ee9911605
 	                </span>
 	            </div>
 	            <div class="comment-content">
 	                <div class="about">내용 : </div>
+<<<<<<< HEAD
 					${result.contents}
+=======
+	                ${nf:hbr(each.contents)}
+>>>>>>> 33dbb4991e322e4d0b7c2abf5165689ee9911605
 	            </div>
 	            <div class="answerDelete">
 					<form method="post">
@@ -76,7 +89,11 @@
 				    <input type="submit" value="삭제" />
 				    </form>
 	            </div>
+<<<<<<< HEAD
 	        </div>	   
+=======
+	        </div>		    	
+>>>>>>> 33dbb4991e322e4d0b7c2abf5165689ee9911605
 	    	</c:forEach>
 	</div>
 	<!-- comments end -->

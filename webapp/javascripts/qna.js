@@ -13,6 +13,7 @@ for (var j = 0; j < questionDeleteFormList.length; j++) {
 }
 
 function writeAnswers(e) {
+<<<<<<< HEAD
     e.preventDefault();
 
     var url = "/api/addanswer.next";
@@ -93,4 +94,23 @@ function detectMobile() {
     } else {
         return false;
     }
+=======
+	 e.preventDefault();
+	 
+	 var answerForm = e.currentTarget.form;
+	 var url = "/api/addanswer.next";
+	 var params = "questionId=" + answerForm[0].value + "&writer=" + answerForm[1].value + "&contents=" + answerForm[2].value;
+
+	 var request = new XMLHttpRequest();
+	 request.open("POST", url, true);
+	 request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	 
+	 request.onreadystatechange = function() {
+		 if(request.readyState == 4 && request.status == 200) {
+			 location.reload(true);
+		 }
+	 }
+	 
+	 request.send(params);
+>>>>>>> 33dbb4991e322e4d0b7c2abf5165689ee9911605
 }
