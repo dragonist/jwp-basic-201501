@@ -11,6 +11,7 @@ public class Junit4Test {
 		System.out.println("Running Test2");
 	}
 	
+	@youTest
 	public void testThree() throws Exception {
 		System.out.println("Running Test3");
 	}
