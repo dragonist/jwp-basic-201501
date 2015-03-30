@@ -35,6 +35,7 @@ public class ReflectionTest {
 		Constructor<?>[] c = clazz.getConstructors();
 		for (Constructor<?> constructor : c) {
 			logger.debug(constructor.getName());
+			
 		}
 		
 		

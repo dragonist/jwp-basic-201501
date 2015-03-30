@@ -12,4 +12,9 @@ public class Junit3Test {
 	public void three() throws Exception {
 		System.out.println("Running Test3");
 	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
 }
